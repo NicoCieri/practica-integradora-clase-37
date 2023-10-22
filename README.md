@@ -4,3 +4,8 @@
 
 - `npm start`: Levanta el proyecto en el puerto 8080.
 - `npm run dev`: Levanta el proyecto y actualiza el servidor con cada cambio guardado.
+
+## Demo passwords
+
+https://github.com/NicoCieri/practica-integradora-clase-37/assets/14900103/442007a5-c497-4e88-95a7-1d0aaf6a15b2
+
