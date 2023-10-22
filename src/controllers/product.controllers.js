@@ -16,6 +16,7 @@ export default class ProductController extends Controllers {
 
       if (!user || (user.role !== "admin" && user.role !== "premium")) {
         httpResponse.Forbidden(res, errors.PERMISSION_DENIED);
+        return;
       }
 
       const newProd = await productService.createProd(req.body, user.email);
@@ -51,6 +52,7 @@ export default class ProductController extends Controllers {
 
       if (!user || (!isAdmin && !isPremium)) {
         httpResponse.Forbidden(res, errors.PERMISSION_DENIED);
+        return;
       }
 
       const product = await productService.getProductById(id);
@@ -61,6 +63,7 @@ export default class ProductController extends Controllers {
 
       if (product.owner !== user.email && !isAdmin) {
         httpResponse.Forbidden(res, errors.PERMISSION_DENIED);
+        return;
       }
 
       const updatedProd = await productService.update(id, prod);
@@ -83,6 +86,7 @@ export default class ProductController extends Controllers {
 
       if (!user || (!isAdmin && !isPremium)) {
         httpResponse.Forbidden(res, errors.PERMISSION_DENIED);
+        return;
       }
 
       const product = await productService.getProductById(id);
@@ -93,6 +97,7 @@ export default class ProductController extends Controllers {
 
       if (product.owner !== user.email && !isAdmin) {
         httpResponse.Forbidden(res, errors.PERMISSION_DENIED);
+        return;
       }
 
       const deletedProd = await productService.delete(id);
